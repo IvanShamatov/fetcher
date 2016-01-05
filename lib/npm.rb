@@ -3,6 +3,8 @@ require 'set'
 require 'httpi'      # <= these gems are already included, so requiring them again would not hurt 
 require 'concurrent' # <= but like that you can just require this file to use it elsewhere
 
+HTTPI.log = false
+
 class NPM
   attr_reader :name
 
@@ -21,7 +23,7 @@ class NPM
   def all_dependencies
     recursive_fetch(self.name)
     while !@futures.keys.empty?
-      sleep 0.1
+      sleep 0.02
     end
     @all_dependencies.keys - [self.name] # just need to remove initial 
   end
