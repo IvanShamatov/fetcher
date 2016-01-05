@@ -23,5 +23,5 @@ Or you can use npm class like that:
 > #=> ["async", "colors", "cycle", "stack-trace", "eyes", "isstream", "pkginfo"]
 ```
 
-Use `rake test` to run test.
+Use `rake test` to run tests.
 
